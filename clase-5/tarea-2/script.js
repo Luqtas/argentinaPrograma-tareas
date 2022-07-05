@@ -8,12 +8,12 @@ mostrarInfoUsuario.onclick = function (){
     const userAge = Number (document.querySelector (".userAge").value);
 
     if (userName === "" && userSecondName === "" && userSurname === "" && userAge === 0){
-        document.querySelector (".datosUser").innerText = "Por favor, completar los formularios."
+        document.querySelector (".datosUser").innerText = "Por favor, completar los formularios.";
     }
     else {
         document.querySelector (".datosUser").innerText = `Su nombre es ${userName} ${userSecondName} ${userSurname}, y su edad es de ${userAge} años.`;
-        document.querySelector (".tittle").innerText = `Bienvenido ${userName}!`
+        document.querySelector (".tittle").innerText = `Bienvenido ${userName}!`;
     }
 
     return false;
-}
+};
