@@ -1,0 +1,55 @@
+body{
+    background-color: cadetblue;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 80px;
+    width: max-content;
+    height: max-content;
+}
+.form__calcularTiempo{
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    padding: 10px;
+    height: max-content;
+    width: max-content;
+    background-color: antiquewhite;
+}
+.titulo__form{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.horasClases{
+    margin: 10px 0;
+    width: 260px;
+}
+.minutosClases{
+    margin: 10px 0;
+    width: 260px;
+}
+.segundosClases{
+    margin: 10px 0;
+    width: 260px;
+}
+.botonCalcular{
+    width: auto;
+    height: 40px;
+    margin: 10px 0;
+}
+.container__respuesta{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    height: max-content;
+    width: max-content;
+}
+.respuesta__usuario{
+    color: #fff;
+    font-size: 30px;
+}
