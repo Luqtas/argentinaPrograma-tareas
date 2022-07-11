@@ -4,6 +4,7 @@ body{
 div{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: auto;
     margin-top: 50px;
     padding: 20px;
@@ -14,6 +15,7 @@ div{
 }
 .formularioDeIngresos{
     display: flex;
+    margin: 15px 0;
     height: 50px;
     width: 100%;
     justify-content: space-around;
@@ -21,11 +23,33 @@ div{
 .sueldoAnualUsuario{
     height: 50px;
 }
-.calcularIngresos{
+.calcularIngresosPorMes{
     height: 30px;
     align-self: center;
 }
 .ingresosMensualUsuario{
+    height: 50px;
+    color: black;
+}
+.sueldoPorMes{
+    height: 50px;
+}
+.calcularIngresosPorAño{
+    height: 30px;
+    align-self: center;
+}
+.IngresoAnual{
+    height: 50px;
+    color: black;
+}
+.calcularIngresosPorDia{
+    height: 30px;
+    align-self: center;
+}
+.sueldoPorMesDos{
+    height: 50px;
+}
+.IngresoDiario{
     height: 50px;
     color: black;
 }
