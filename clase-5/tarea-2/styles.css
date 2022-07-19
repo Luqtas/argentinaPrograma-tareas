@@ -1,7 +1,7 @@
 body{
     background-color: cadetblue;
 }
-.container{
+.contenedor{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@ body{
     background-color: aquamarine;
     border-radius: 30px;
 }
-.userForm{
+.formulario-usuario{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +29,7 @@ button{
     width: 257px;
     height: 30px;
 }
-.userInfo{
+.informacion-usuario{
     display: flex;
     justify-content: center ;
     margin: auto;
@@ -39,6 +39,6 @@ button{
     width: 400px;
     text-align: center;
 }
-.datosUser{
+.informacion-usuario__datos{
     font-size: 30px;
 }

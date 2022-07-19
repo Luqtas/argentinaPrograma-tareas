@@ -1,18 +1,18 @@
 body{
     background-color: rgb(21, 221, 154);
 }
-.container-list{
+.contenedor-lista{
     display: flex;
     margin: auto;
     padding: 10px;
     height: max-content;
     width: max-content;
 }
-.list{
+.lista{
     display: flex;
     list-style: none;
 }
-.item{
+.lista__item{
     margin: 10px;
     padding: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -34,7 +34,7 @@ button{
     height: max-content;
     width: max-content;
 }
-.container{
+.contenedor-respuesta{
     display: flex;
     flex-direction: column; 
     margin: auto;

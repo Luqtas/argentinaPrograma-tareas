@@ -1,17 +1,21 @@
-const numerosLi = document.querySelectorAll (".item");
+const numerosDeLaLista = document.querySelectorAll (".lista__item");
 
 let listaDeNumeros = [];
 
-for (let i = 0; i < numerosLi.length; i++){
-    listaDeNumeros.push (Number (numerosLi[i].innerText));
-};
+function guardarNumeros (){
+    for (let i = 0; i < numerosDeLaLista.length; i++){
+        listaDeNumeros.push (Number (numerosDeLaLista[i].innerText));
+    };
+}
 
-const resultadoPromedio = document.querySelector (".respuesta-promedio");
-const resultadoPequeño = document.querySelector (".respuesta-pequeño");
-const resultadoMayor = document.querySelector (".respuesta-grande");
-const resultadoNumeroFrecuente = document.querySelector (".respuesta-frecuente");
+guardarNumeros();
 
-const botonPromedio = document.querySelector (".calcular__promedio");
+const resultadoPromedio = document.querySelector (".contenedor-respuesta__promedio");
+const resultadoPequeño = document.querySelector (".contenedor-respuesta-pequeño");
+const resultadoMayor = document.querySelector (".contenedor-respuesta-grande");
+const resultadoNumeroFrecuente = document.querySelector (".contenedor-respuesta-frecuente");
+
+const botonPromedio = document.querySelector (".formulario__calcular__promedio");
 
 botonPromedio.onclick = function(){
     let promedioDeLaLista = 0;
@@ -25,18 +29,18 @@ botonPromedio.onclick = function(){
     return false;
 };
 
-const botonPequeño = document.querySelector (".calcular__pequeño");
+const botonPequeño = document.querySelector (".formulario__calcular__pequeño");
 
 botonPequeño.onclick = function (){
     let numeroMasPequeño = 0;
 
-    let j = listaDeNumeros.length;
+    let parametroCalcularPequeño = listaDeNumeros.length;
 
     for(let i = 0; i < listaDeNumeros.length; i++){
 
-        if (j > listaDeNumeros[i]){
+        if (parametroCalcularPequeño > listaDeNumeros[i]){
             numeroMasPequeño = listaDeNumeros[i];
-            j--;
+            parametroCalcularPequeño--;
         };
 
     };
@@ -46,18 +50,18 @@ botonPequeño.onclick = function (){
     return false;
 }; 
 
-const botonMayor = document.querySelector (".calcular__grande");
+const botonMayor = document.querySelector (".formulario__calcular__grande");
 
 botonMayor.onclick = function (){
     let numeroMasGrande = 0;
 
-    let j = listaDeNumeros.length;
+    let parametroCalcularGrande = listaDeNumeros.length;
 
     for(let i = 0; i < listaDeNumeros.length; i++){
 
-        if (j < listaDeNumeros[i]){
+        if (parametroCalcularGrande < listaDeNumeros[i]){
             numeroMasGrande = listaDeNumeros[i];
-            j = listaDeNumeros[i]
+            parametroCalcularGrande = listaDeNumeros[i]
         };
 
     };
@@ -67,16 +71,16 @@ botonMayor.onclick = function (){
     return false;
 };
 
-const respuestaNumeroFrecuente = document.querySelector (".calcular__frecuente");
+const respuestaNumeroFrecuente = document.querySelector (".formulario__calcular__frecuente");
 
 respuestaNumeroFrecuente.onclick = function (){
     let numeroFrecuente = 0;
 
-    let j = listaDeNumeros.length;
+    let parametroCalcularFrecuente = listaDeNumeros.length;
 
     for (let i = 0; i < listaDeNumeros.length; i++){
 
-        if (j < listaDeNumeros[i]){
+        if (parametroCalcularFrecuente < listaDeNumeros[i]){
             numeroFrecuente = listaDeNumeros[i];
         };
     };
@@ -86,7 +90,7 @@ respuestaNumeroFrecuente.onclick = function (){
     return false;
 };
 
-const botonReinicio = document.querySelector (".limpiar-resultados");
+const botonReinicio = document.querySelector (".formulario__limpiar-resultados");
 
 botonReinicio.onclick = function(){
     resultadoPromedio.innerText = "";

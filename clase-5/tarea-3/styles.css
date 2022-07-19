@@ -1,7 +1,7 @@
 body{
     background-color: cadetblue;
 }
-.container{
+.contenedor{
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -9,7 +9,7 @@ body{
     width: max-content;
     height: max-content;
 }
-.form__calcularTiempo{
+.calcular-tiempo{
     display: flex;
     flex-direction: column;
     margin: 0 10px;
@@ -18,29 +18,23 @@ body{
     width: max-content;
     background-color: antiquewhite;
 }
-.titulo__form{
+.calcular-tiempo__titulo{
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
 }
-.horasClases{
+.calcular-tiempo__horas,
+.calcular-tiempo__minutos,
+.calcular-tiempo__segundos{
     margin: 10px 0;
     width: 260px;
 }
-.minutosClases{
-    margin: 10px 0;
-    width: 260px;
-}
-.segundosClases{
-    margin: 10px 0;
-    width: 260px;
-}
-.botonCalcular{
+.contenedor-respuesta__boton-calcular{
     width: auto;
     height: 40px;
     margin: 10px 0;
 }
-.container__respuesta{
+.contenedor-respuesta{
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -49,7 +43,7 @@ body{
     height: max-content;
     width: max-content;
 }
-.respuesta__usuario{
+.contenedor-respuesta__respuesta-usuario{
     color: #fff;
     font-size: 30px;
 }

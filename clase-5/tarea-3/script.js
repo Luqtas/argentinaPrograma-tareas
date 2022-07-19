@@ -9,13 +9,13 @@ function convertirInputATiempo (tiempoTotal){
     return tiempoFinal;
 }
 
-const $horas = document.querySelectorAll (".horasClases");
-const $minutos = document.querySelectorAll (".minutosClases");
-const $segundos = document.querySelectorAll (".segundosClases");
+const $horas = document.querySelectorAll (".calcular-tiempo__horas");
+const $minutos = document.querySelectorAll (".calcular-tiempo__minutos");
+const $segundos = document.querySelectorAll (".calcular-tiempo__segundos");
 
-const $calcularTiempoTotal = document.querySelector (".botonCalcular");
+const $calcularTiempoTotal = document.querySelector (".contenedor-respuesta__boton-calcular");
 
-const $respuestaFinal = document.querySelector (".respuesta__usuario");
+const $respuestaFinal = document.querySelector (".contenedor-respuesta__respuesta-usuario");
 
 $calcularTiempoTotal.onclick = function (){
 

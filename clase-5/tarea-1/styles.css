@@ -13,43 +13,27 @@ div{
     height: 300px;
     border-radius: 10px;
 }
-.formularioDeIngresos{
+.formulario-ingresos{
     display: flex;
     margin: 15px 0;
     height: 50px;
     width: 100%;
     justify-content: space-around;
 }
-.sueldoAnualUsuario{
+.formulario-ingresos__sueldo-anual,
+.formulario-ingresos__sueldo-mensual,
+.formulario-ingresos__sueldo-mes-dos{
     height: 50px;
 }
-.calcularIngresosPorMes{
+.formulario-ingresos__calcular-ingresos-mes,
+.formulario-ingresos__calcular-ingresos-anio,
+.formulario-ingresos__calcular-ingresos-dia{
     height: 30px;
     align-self: center;
 }
-.ingresosMensualUsuario{
-    height: 50px;
-    color: black;
-}
-.sueldoPorMes{
-    height: 50px;
-}
-.calcularIngresosPorAño{
-    height: 30px;
-    align-self: center;
-}
-.IngresoAnual{
-    height: 50px;
-    color: black;
-}
-.calcularIngresosPorDia{
-    height: 30px;
-    align-self: center;
-}
-.sueldoPorMesDos{
-    height: 50px;
-}
-.IngresoDiario{
+.formulario-ingresos__ingreso-mensual,
+.formulario-ingresos__ingreso-anual,
+.formulario-ingresos__ingreso-diario{
     height: 50px;
     color: black;
 }
