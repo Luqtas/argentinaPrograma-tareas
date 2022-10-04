@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://kit.fontawesome.com/ca6fdd5c59.js" crossorigin="anonymous"></script>
+	<title>Tarea 2 Clase 6</title>
+</head>
+<body>
+	<div class="contenedor">
+		<div class="contenedor-titulo">
+			<h2 class="contenedor-titulo__titulo">Calculador de ingresos</h2>
+		</div>
+		<div class="contenedor-botones">
+			<button class="contenedor-botones__agregar"><i class="fa-solid fa-plus"></i></button>
+			<button class="contenedor-botones__eliminar"><i class="fa-solid fa-minus"></i></button>
+		</div>
+		<div class="contenedor-formulario">
+			<form class="formulario">
+				<label class="formulario__label">Ingresar su salario anual</label>
+				<input type="number" class="formulario__sueldo-anual-usuario" placeholder="Salario anual">
+				<label class="formulario__label">Ingresar salario anual del familiar</label>
+				<input type="number" class="formulario__sueldo-anual-usuario" placeholder="Salario anual">
+			</form>
+			<div class="contenedor__boton-calcular">
+				<button class="formulario__calcular-ingresos">Calcular</button>
+				<button class="formulario__reiniciar-formulario">Reiniciar</button>
+			</div>
+		</div>
+	</div>
+	<div class="contenedor-respuesta">
+		<p class="contenedor-respuesta__mayor-salario-anual"></p>
+		<p class="contenedor-respuesta__menor-salario-anual"></p>
+		<p class="contenedor-respuesta__promedio-salario-anual"></p>
+		<p class="contenedor-respuesta__promedio-salario-mensual"></p>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

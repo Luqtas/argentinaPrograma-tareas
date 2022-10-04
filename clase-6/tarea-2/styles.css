@@ -1,0 +1,86 @@
+body{
+	background-color: #FF3832;
+}
+.contenedor{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.contenedor-titulo{
+	text-align: center;
+}
+.contenedor-titulo__titulo{
+	margin: 0px;
+	margin-top: 10px;
+	font-size: 40px;
+	font-family: sans-serif;
+	color: 	#FAEBD7;
+	-webkit-text-stroke: 2px black;
+}
+.contenedor-botones{
+	display: flex;
+	justify-content: space-around;
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 500px;
+}
+.contenedor-formulario{
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 30px;
+	width: 400px;
+	background-color: #FAEBD7;
+	border: 2px solid black;
+	border-radius: 10px
+}
+.formulario{
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+.formulario__label{
+	margin: 5px 0px;
+	font-size: 20px;
+	font-family: sans-serif;
+	color: black;
+	text-align: center;
+}
+.formulario__sueldo-anual-usuario{
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+	width: 200px;
+	height: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+.contenedor__boton-calcular{
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+.formulario__calcular-ingresos,
+.formulario__reiniciar-formulario{
+	margin: auto;
+	margin-top: 10px;
+	padding: 5px;
+	width: 200px;
+}
+.contenedor-respuesta{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.contenedor-respuesta__mayor-salario-anual,
+.contenedor-respuesta__menor-salario-anual,
+.contenedor-respuesta__promedio-salario-anual,
+.contenedor-respuesta__promedio-salario-mensual{
+	color: white;
+	font-family: sans-serif;
+	font-size: 20px;
+}
