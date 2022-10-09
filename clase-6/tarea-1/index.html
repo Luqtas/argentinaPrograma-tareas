@@ -10,20 +10,21 @@
 <body>
 	<div class="contenedor">
 		<div class="contenedor-titulo">
-			<h1 class="contenedor-titulo__titulo">¿Cuántas personas hay en tu grupo familiar?</h1>
+			<h1 class="titulo">¿Cuántas personas hay en tu grupo familiar?</h1>
 		</div>
 		<div class="contenedor-formulario">
-			<form class="contenedor-formulario__formulario">
-				<input type="number" class="contenedor-formulario__input" placeholder="Ingrese su respuesta">
-				<button class="contenedor-formulario__enviar">Enviar</button>
-				<button class="contenedor-formulario__resetear">Resetear</button>
+			<form class="formulario">
+				<input type="number" class="formulario-input" placeholder="Ingrese su respuesta">
+				<button class="formulario-enviar">Enviar</button>
 			</form>
+				<button class="boton-calcular" id="oculto">Calcular</button>
+				<button class="boton-resetear">Resetear</button>
 		</div>
 	</div>
-	<div class="respuesta">
-		<p class="respuesta__usuario-familiar-mayor"></p>
-		<p class="respuesta__usuario-familiar-menor"></p>
-		<p class="respuesta__usuario-promedio-edad-familia"></p>
+	<div class="contenedor-respuesta">
+		<p class="respuesta-familiar-mayor"></p>
+		<p class="respuesta-familiar-menor"></p>
+		<p class="respuesta-promedio-edad-familia"></p>
 	</div>
     <script type="text/javascript" src="script.js"></script>
 </body>

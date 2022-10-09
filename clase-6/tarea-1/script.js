@@ -1,20 +1,23 @@
-const botonCalcularCantidadFamiliar = document.querySelector(".contenedor-formulario__enviar");
-const botonEmpezarDeNuevo = document.querySelector (".contenedor-formulario__resetear");
-const cantidadPersonasGrupoFamiliar = document.querySelector(".contenedor-formulario__input");
-const nodoFormulario = document.querySelector (".contenedor-formulario__formulario");
-const respuestaUsuarioFamiliarMayor = document.querySelector (".respuesta__usuario-familiar-mayor");
-const respuestaUsuarioFamiliarMenor = document.querySelector (".respuesta__usuario-familiar-menor");
-const respuestaUsuarioPromedioEdadFamilia = document.querySelector (".respuesta__usuario-promedio-edad-familia");
-
-edadesFamilia = [];
+const $botonCalcularCantidadFamiliar = document.querySelector(".formulario-enviar");
+const $botonEmpezarDeNuevo = document.querySelector (".boton-resetear");
+const $botonCalcularEdadesFamilia = document.querySelector (".boton-calcular");
+const $cantidadPersonasGrupoFamiliar = document.querySelector(".formulario-input");
+const $nodoFormulario = document.querySelector (".formulario");
+const $respuestaUsuarioFamiliarMayor = document.querySelector (".respuesta-familiar-mayor");
+const $respuestaUsuarioFamiliarMenor = document.querySelector (".respuesta-familiar-menor");
+const $respuestaUsuarioPromedioEdadFamilia = document.querySelector (".respuesta-promedio-edad-familia");
 
 function guardarEdadesGrupoFamiliar(edades){
+    let edadesFamilia = [];
+
 	for (let i = 0; i < edades.length; i++){
 	    edadesFamilia.push(Number(edades[i].value));
 	};
+
+	return edadesFamilia;
 };
 
-function encontrarIntegranteMasGrande(){
+function encontrarIntegranteMasGrande(edadesFamilia){
 	let familiarMayor = edadesFamilia[0];
 
 	for (let i = 1; i < edadesFamilia.length; i++){
@@ -26,7 +29,7 @@ function encontrarIntegranteMasGrande(){
 	return familiarMayor;
 };
 
-function encontrarIntegranteMasChico(){
+function encontrarIntegranteMasChico(edadesFamilia){
 	let familiarMenor = edadesFamilia[0];
 
 	for (let i = 1; i < edadesFamilia.length; i ++){
@@ -38,7 +41,7 @@ function encontrarIntegranteMasChico(){
 	return familiarMenor;
 };
 
-function calcularPromedioEdadFamiliaUsuario(){
+function calcularPromedioEdadFamiliaUsuario(edadesFamilia){
 	let promedioFinal = 0;
 
 	for (let i = 0; i < edadesFamilia.length; i++){
@@ -48,8 +51,8 @@ function calcularPromedioEdadFamiliaUsuario(){
 	return promedioFinal = promedioFinal / edadesFamilia.length;
 };
 
-botonCalcularCantidadFamiliar.onclick = function (){
-	for (let i = 1; i <= cantidadPersonasGrupoFamiliar.value; i++){
+function crearLabelsEInputs(){
+	for (let i = 1; i <= $cantidadPersonasGrupoFamiliar.value; i++){
 		const nuevoLabel = document.createElement ("label");
 		const textoLabel = document.createTextNode ("Edad familiar " + i);
 		nuevoLabel.className = "label-de-respuesta";
@@ -66,76 +69,55 @@ botonCalcularCantidadFamiliar.onclick = function (){
 		nuevoInput.className = "edades-familia";
 
 		nuevoLabel.appendChild (textoLabel);
-		nodoFormulario.appendChild (nuevoLabel);
-		nodoFormulario.appendChild (nuevoInput);
+		$nodoFormulario.appendChild (nuevoLabel);
+		$nodoFormulario.appendChild (nuevoInput);
 	};
+};
 
-	const botonCalcularEdadesFamilia = document.createElement ("button");
-	botonCalcularEdadesFamilia.innerText = "Calcular";
-	botonCalcularEdadesFamilia.className = "boton-calcular-edades";
-	botonCalcularEdadesFamilia.style.margin = "5px 0";
-	botonCalcularEdadesFamilia.style.padding = "5px";
-	botonCalcularEdadesFamilia.style.border = "1px solid #6495ed";
-	botonCalcularEdadesFamilia.style.borderRadius = "5px";
-	nodoFormulario.appendChild (botonCalcularEdadesFamilia);
+function borrarElementos(){
+	$cantidadPersonasGrupoFamiliar.remove();
+	$botonCalcularCantidadFamiliar.remove();
+};
 
-	botonCalcularEdadesFamilia.addEventListener("mouseover", function (event) {
-		botonCalcularEdadesFamilia.style.color = "#fff";
-		botonCalcularEdadesFamilia.style.border = "1px solid black";
-		botonCalcularEdadesFamilia.style.backgroundColor = "#6495ed";
-	}, false);
+function agregarNuevoTitulo(){
+	const $tituloCalcularGrupoFamiliar = document.querySelector (".titulo");
+	const nuevoTitulo = "Calcular edades de su grupo familiar";
 
-    botonCalcularEdadesFamilia.addEventListener("mouseout", function (event) {
-      botonCalcularEdadesFamilia.style.color = "black";
-      botonCalcularEdadesFamilia.style.border = "1px solid #6495ed";
-      botonCalcularEdadesFamilia.style.backgroundColor = "#fff";
-    }, false);
+	$tituloCalcularGrupoFamiliar.innerText = nuevoTitulo;
+};
 
-	botonCalcularEdadesFamilia.onclick = function (){
-		const edadesGrupoFamiliar = document.querySelectorAll (".edades-familia");
+$botonCalcularCantidadFamiliar.onclick = function (){
+	if($cantidadPersonasGrupoFamiliar.value >= 1){
+		$botonCalcularEdadesFamilia.id = "";
 
-		guardarEdadesGrupoFamiliar(edadesGrupoFamiliar);
-
-		respuestaUsuarioFamiliarMayor.innerText = `El familiar con mayor edad tiene ${encontrarIntegranteMasGrande()} años.`;
-		respuestaUsuarioFamiliarMenor.innerText = `El familiar con menor edad tiene ${encontrarIntegranteMasChico()} años.`;
-		respuestaUsuarioPromedioEdadFamilia.innerText = `El promedio de edad de la familia es de ${calcularPromedioEdadFamiliaUsuario()} años.`;
-
+        crearLabelsEInputs();
+        borrarElementos();
+        agregarNuevoTitulo();
+	}
+	else{
 		return false;
 	};
 
 	return false;
 };
 
-function borrarLabelsCreados(){
-	const labelsCreados = document.querySelectorAll (".label-de-respuesta");
-    for (let i = 0; i < labelsCreados.length; i++) {
-        labelsCreados[i].remove();
-    };
+function mostrarRespuestas(){
+	const $edadesGrupoFamiliar = document.querySelectorAll (".edades-familia");
+    let edadesFamilia = guardarEdadesGrupoFamiliar($edadesGrupoFamiliar);
+
+	$respuestaUsuarioFamiliarMayor.innerText = `El familiar con mayor edad tiene ${encontrarIntegranteMasGrande(edadesFamilia)} años.`;
+	$respuestaUsuarioFamiliarMenor.innerText = `El familiar con menor edad tiene ${encontrarIntegranteMasChico(edadesFamilia)} años.`;
+	$respuestaUsuarioPromedioEdadFamilia.innerText = `El promedio de edad de la familia es de ${calcularPromedioEdadFamiliaUsuario(edadesFamilia)} años.`;
 };
 
-function borrarInputsEdad(){
-    const inputsCreados = document.querySelectorAll (".edades-familia");
-    for (let i = 0; i < inputsCreados.length; i++){
-    	inputsCreados[i].remove();
-    };
+$botonCalcularEdadesFamilia.onclick = function (){
+	mostrarRespuestas();
+
+	return false;
 };
 
-function borrarBotonCalcularEdad(){
-    const botonCalcularEdades = document.querySelector(".boton-calcular-edades");
-    botonCalcularEdades.remove();
-};
-
-function borrarRespuesta(){
-    respuestaUsuarioFamiliarMayor.innerText = "";
-    respuestaUsuarioFamiliarMenor.innerText = "";
-    respuestaUsuarioPromedioEdadFamilia.innerText = "";
-};
-
-botonEmpezarDeNuevo.onclick = function(){
-    borrarLabelsCreados();
-    borrarInputsEdad();
-    borrarBotonCalcularEdad();
-    borrarRespuesta();
+$botonEmpezarDeNuevo.onclick = function(){
+    location.reload()
 
 	return false;
 };

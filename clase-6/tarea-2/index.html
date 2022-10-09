@@ -11,30 +11,30 @@
 <body>
 	<div class="contenedor">
 		<div class="contenedor-titulo">
-			<h2 class="contenedor-titulo__titulo">Calculador de ingresos</h2>
+			<h2 class="titulo">Calculador de ingresos</h2>
 		</div>
 		<div class="contenedor-botones">
-			<button class="contenedor-botones__agregar"><i class="fa-solid fa-plus"></i></button>
-			<button class="contenedor-botones__eliminar"><i class="fa-solid fa-minus"></i></button>
+			<button class="boton-agregar">Agregar un salario</button>
+			<button class="boton-eliminar">Eliminar un salario</button>
 		</div>
 		<div class="contenedor-formulario">
 			<form class="formulario">
-				<label class="formulario__label">Ingresar su salario anual</label>
-				<input type="number" class="formulario__sueldo-anual-usuario" placeholder="Salario anual">
-				<label class="formulario__label">Ingresar salario anual del familiar</label>
-				<input type="number" class="formulario__sueldo-anual-usuario" placeholder="Salario anual">
+				<label class="formulario-label">Ingresar su salario anual</label>
+				<input type="number" class="formulario-input" placeholder="Salario anual">
+				<label class="formulario-label">Ingresar salario anual del familiar</label>
+				<input type="number" class="formulario-input" placeholder="Salario anual">
 			</form>
-			<div class="contenedor__boton-calcular">
-				<button class="formulario__calcular-ingresos">Calcular</button>
-				<button class="formulario__reiniciar-formulario">Reiniciar</button>
+			<div class="contenedor-botones--calcular-y-reiniciar">
+				<button class="boton-calcular-ingresos">Calcular</button>
+				<button class="boton-reiniciar-tramite">Reiniciar</button>
 			</div>
 		</div>
 	</div>
 	<div class="contenedor-respuesta">
-		<p class="contenedor-respuesta__mayor-salario-anual"></p>
-		<p class="contenedor-respuesta__menor-salario-anual"></p>
-		<p class="contenedor-respuesta__promedio-salario-anual"></p>
-		<p class="contenedor-respuesta__promedio-salario-mensual"></p>
+		<p class="respuesta-mayor-salario-anual"></p>
+		<p class="respuesta-menor-salario-anual"></p>
+		<p class="respuesta-promedio-salario-anual"></p>
+		<p class="respuesta-promedio-salario-mensual"></p>
 	</div>
 	<script type="text/javascript" src="script.js"></script>
 </body>

@@ -18,48 +18,63 @@ body{
 	width: max-content;
 	text-align: center;
 }
-.contenedor-titulo__titulo{
+.titulo{
 	font-size: 25px;
 	font-family: sans-serif;
 }
 .contenedor-formulario{
 	display: flex;
 	justify-content: center;
-	height: max-content;
+	align-self: center;
+	flex-direction: column;
 	width: 100%;
 }
-.contenedor-formulario__input{
+.formulario{
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+}
+.formulario-input{
 	height: 30px;
 	width: 200px;
 	margin: 5px 0;
 }
-.contenedor-formulario__formulario{
-	display: flex;
-	flex-direction: column;
-}
-.contenedor-formulario__enviar,
-.contenedor-formulario__resetear{
+.formulario-enviar{
+	width: 210px;
 	margin: 5px 0;
 	padding: 5px;
 	border: 1px solid #6495ed;
 	border-radius: 5px;
 }
-.contenedor-formulario__enviar:hover,
-.contenedor-formulario__resetear:hover{
+.boton-calcular,
+.boton-resetear{
+	width: 210px;
+	margin: 5px 0;
+	padding: 5px;
+	border: 1px solid #6495ed;
+	border-radius: 5px;
+	align-self: center;
+}
+.formulario-enviar:hover,
+.boton-calcular:hover,
+.boton-resetear:hover{
 	color: #fff;
 	background-color: #6495ed;
 	border: 1px solid black;
 }
-.respuesta{
+.contenedor-respuesta{
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 }
-.respuesta__usuario-familiar-mayor,
-.respuesta__usuario-familiar-menor,
-.respuesta__usuario-promedio-edad-familia{
+.respuesta-familiar-mayor,
+.respuesta-familiar-menor,
+.respuesta-promedio-edad-familia{
 	margin: 10px;
 	font-size: 25px;
 	font-family: cursive;
 	color: white;
+}
+#oculto{
+	display: none;
 }
