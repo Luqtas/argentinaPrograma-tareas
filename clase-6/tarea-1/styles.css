@@ -39,13 +39,7 @@ body{
 	width: 200px;
 	margin: 5px 0;
 }
-.formulario-enviar{
-	width: 210px;
-	margin: 5px 0;
-	padding: 5px;
-	border: 1px solid #6495ed;
-	border-radius: 5px;
-}
+.formulario-enviar,
 .boton-calcular,
 .boton-resetear{
 	width: 210px;
@@ -77,4 +71,16 @@ body{
 }
 #oculto{
 	display: none;
+}
+.label-de-respuesta{
+	margin: 5px 0;
+	font-family: sans-serif;
+	font-size: 15px;
+	text-align: center;
+}
+.edades-familia{
+	height: 30px;
+	width: 200px;
+	margin: 5px 0;
+	text-align: center;
 }
