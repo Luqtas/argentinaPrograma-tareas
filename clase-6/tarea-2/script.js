@@ -32,11 +32,11 @@ function eliminarElementosCreados(){
 	const $inputsExistentes = document.querySelectorAll ("input");
 
 	if($inputsExistentes.length > 1){
-	    const $labelCreado = document.querySelector (".label-agregado");
-	    const $inputCreado = document.querySelector (".input-agregado");
+		const $labelCreado = document.querySelector (".label-agregado");
+		const $inputCreado = document.querySelector (".input-agregado");
 
-	    $nodoFormulario.removeChild($labelCreado);
-	    $nodoFormulario.removeChild($inputCreado);
+		$nodoFormulario.removeChild($labelCreado);
+		$nodoFormulario.removeChild($inputCreado);
 	}
 	else{
 		return false;
@@ -44,31 +44,31 @@ function eliminarElementosCreados(){
 };
 
 $botonEliminarInterfaz.onclick = function (){
-    eliminarElementosCreados();
+	eliminarElementosCreados();
 
 	return false;
 };
 
 function guardarSalariosEnlista(todosLosSalarios){
-    let listaDeSalarios = [];
+	let listaDeSalarios = [];
 
 	for (let i = 0; i < todosLosSalarios.length; i++){
 		if (todosLosSalarios[i].value === ''){
 
 		}
-	    else if(todosLosSalarios[i].value <= 0){
-	    	
-	    }
-	    else{
-	        listaDeSalarios.push (todosLosSalarios[i].value);	
-	    };
+		else if(todosLosSalarios[i].value <= 0){
+
+		}
+		else{
+			listaDeSalarios.push (todosLosSalarios[i].value);	
+		};
 	};
 
 	return listaDeSalarios;
 };
 
 function encontrarMayorSalarioAnual(listaDeSalarios){
-    let mayorSalarioAnual = listaDeSalarios[0];
+	let mayorSalarioAnual = listaDeSalarios[0];
 
 	for (let i = 1; i < listaDeSalarios.length; i++){
 		if (listaDeSalarios[i] > mayorSalarioAnual){
@@ -80,7 +80,7 @@ function encontrarMayorSalarioAnual(listaDeSalarios){
 };
 
 function encontrarMenorSalarioAnual(listaDeSalarios){
-    let menorSalarioAnual = listaDeSalarios[0];
+	let menorSalarioAnual = listaDeSalarios[0];
 
 	for (let i = 1; i < listaDeSalarios.length; i++){
 		if (listaDeSalarios[i] < menorSalarioAnual){
@@ -92,7 +92,7 @@ function encontrarMenorSalarioAnual(listaDeSalarios){
 };
 
 function promediarSalarioAnual(listaDeSalarios){
-    let promedioSalarioAnual = 0;
+	let promedioSalarioAnual = 0;
 	for (let i = 0; i < listaDeSalarios.length; i++){
 		promedioSalarioAnual += listaDeSalarios[i];
 	};
@@ -101,10 +101,10 @@ function promediarSalarioAnual(listaDeSalarios){
 };
 
 function guardarSalarioMensual(listaDeSalarios, mesesDelAnio){
-    let listaSalarioMensual = [];
+	let listaSalarioMensual = [];
 
 	for (let i = 0; i < listaDeSalarios.length; i++){
-	    listaSalarioMensual.push (listaDeSalarios[i] / mesesDelAnio);
+		listaSalarioMensual.push (listaDeSalarios[i] / mesesDelAnio);
 	};
 
 	return listaSalarioMensual;
@@ -158,7 +158,7 @@ function eliminarTodosLosNodosCreados(){
 };
 
 $botonReiniciar.onclick = function(){
-    eliminarTodosLosNodosCreados()
+	eliminarTodosLosNodosCreados()
 	eliminarRespuestas();
 
 	return false;
