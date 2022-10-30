@@ -16,6 +16,7 @@ function crearNuevosElementos(){
 	$nodoFormulario.appendChild (nuevoLabel);
 
 	const nuevoInput = document.createElement ("input");
+	nuevoInput.type = "number"
 	nuevoInput.placeholder = "Salario anual"
 	nuevoInput.className = "formulario-input input-agregado";
 	$nodoFormulario.appendChild (nuevoInput);
@@ -52,8 +53,14 @@ function guardarSalariosEnlista(todosLosSalarios){
     let listaDeSalarios = [];
 
 	for (let i = 0; i < todosLosSalarios.length; i++){
-		if (todosLosSalarios[i].value !== ''){
-	        listaDeSalarios.push (Number(todosLosSalarios[i].value));	
+		if (todosLosSalarios[i].value === ''){
+
+		}
+	    else if(todosLosSalarios[i].value <= 0){
+	    	
+	    }
+	    else{
+	        listaDeSalarios.push (todosLosSalarios[i].value);	
 	    };
 	};
 
@@ -116,12 +123,12 @@ function promediarSalarioMensual(listaDeSalarios){
 };
 
 function darRespuestaUsuario(listaDeSalarios){
-	if(listaDeSalarios.length > 0){
-        $respuestaSalarioMayorAnual.innerText = "El mayor sueldo anual es de " + encontrarMayorSalarioAnual(listaDeSalarios);
-        $respuestaSalarioMenorAnual.innerText = "El menor sueldo anual es de " + encontrarMenorSalarioAnual(listaDeSalarios);
-        $respuestaPromedioAnual.innerText = "El promedio de salarios anuales es de " + promediarSalarioAnual(listaDeSalarios);
-        $respuestaPromedioMensual.innerText = "El promedio de salarios mensuales es de " + promediarSalarioMensual(listaDeSalarios);
-	};
+	if (listaDeSalarios.length !== 0){
+		$respuestaSalarioMayorAnual.innerText = "El mayor sueldo anual es de " + encontrarMayorSalarioAnual(listaDeSalarios);
+		$respuestaSalarioMenorAnual.innerText = "El menor sueldo anual es de " + encontrarMenorSalarioAnual(listaDeSalarios);
+		$respuestaPromedioAnual.innerText = "El promedio de salarios anuales es de " + promediarSalarioAnual(listaDeSalarios);
+		$respuestaPromedioMensual.innerText = "El promedio de salarios mensuales es de " + promediarSalarioMensual(listaDeSalarios);
+	}
 };
 
 $botonCalcularSalarios.onclick = function(){
