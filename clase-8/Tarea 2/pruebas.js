@@ -5,7 +5,7 @@ function probarValidacionesSalariosFamilia(){
 		);
 
 	console.assert(
-		validarSalariosFamilia("0") === "El salario anual no puede ser 0",
+		validarSalariosFamilia(0) === "El salario anual no puede ser 0",
 		"La validación de salarios con valor 0 no ha funcionado correctamente."
 		);
 
@@ -15,12 +15,12 @@ function probarValidacionesSalariosFamilia(){
 		);
 
 	console.assert(
-		validarSalariosFamilia("12") === "El campo de salarios no puede tener menos de 3 digitos",
-		"La validación de salarios con menos de dos caracteres no ha funcionado correctamente."
+		validarSalariosFamilia(100) === "El campo de salarios no puede ser menor a 100",
+		"La validación de salarios con un valor igual o menor que 100 no ha funcionado correctamente."
 		);
 
 	console.assert(
-		validarSalariosFamilia("123123123") === "",
+		validarSalariosFamilia(123123123) === "",
 		"La validación de salarios con un valor correcto no ha funcionado correctamente."
 		);
 };
