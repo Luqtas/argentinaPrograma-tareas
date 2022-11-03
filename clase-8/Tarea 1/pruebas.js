@@ -5,17 +5,17 @@ function probarValidarCantidadGrupoFamiliar(){
 		);
 
 	console.assert(
-		validarCantidadGrupoFamiliar("0") === "La cantidad del grupo familiar no puede ser menor que 1.",
+		validarCantidadGrupoFamiliar(0) === "La cantidad del grupo familiar no puede ser menor que 1.",
 		"La validación para calcular la cantidad del grupo familiar con valor menor a 1 no ha funcionado correctamente."
 		);
 
 	console.assert(
-		validarCantidadGrupoFamiliar("123") === "El campo no puede contener más de 3 caractéres.",
-		"La validación para calcular la cantidad del grupo familiar con tres o más caractéres no ha funcionado correctamente."
+		validarCantidadGrupoFamiliar(100) === "La cantidad del grupo familiar no puede ser mayor a 99.",
+		"La validación para calcular la cantidad del grupo familiar con tres o más caracteres no ha funcionado correctamente."
 		);
 
 	console.assert(
-		validarCantidadGrupoFamiliar("12") === "",
+		validarCantidadGrupoFamiliar(12) === "",
 		"La validación para calcular la cantidad del grupo familiar con un valor correcto no ha funcionado como debería."
 		);
 };
@@ -23,7 +23,7 @@ probarValidarCantidadGrupoFamiliar();
 
 function probarValidarEdadesDelGrupoFamiliar(){
 	console.assert(
-		validarEdadesDelGrupoFamiliar("") === "El campo de edades no puede estar vacio.",
+		validarEdadesDelGrupoFamiliar(0) === "El campo de edades no puede estar vacio.",
 		"La validación para calcular la edad del grupo familiar con un string vacío no ha funcionado correctamente."
 		);
 
@@ -33,12 +33,12 @@ function probarValidarEdadesDelGrupoFamiliar(){
 		);
 
 	console.assert(
-		validarEdadesDelGrupoFamiliar("123123") === "El campo de edades no puede tener mas de 3 caractéres.",
-		"La validación para calcular la edad del grupo familiar con mas de 3 caractéres no ha funcionado correctamente."
+		validarEdadesDelGrupoFamiliar(100) === "La edad del miembro de la familia no puede ser mayor a 99 años.",
+		"La validación para calcular la edad del grupo familiar con mas de 3 caracteres no ha funcionado correctamente."
 		);
 
 	console.assert(
-		validarEdadesDelGrupoFamiliar("132") === "",
+		validarEdadesDelGrupoFamiliar(12) === "",
 		"La validación para calcular la edad del grupo familiar con un valor correcto no ha funcionado correctamente."
 		);
 };
