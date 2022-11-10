@@ -69,55 +69,19 @@ function mostrarErroresCantidadGrupoFamiliar(cantidadGrupoFamiliar){
 }
 
 $botonCalcularGrupo.onclick = function(){
-	const $cantidadGrupoFamiliar = document.querySelector (".cantidad-familia").value;
+	const cantidadGrupoFamiliar = Number(document.querySelector (".cantidad-familia").value);
 
-	if(validarCantidadGrupoFamiliar(Number($cantidadGrupoFamiliar)) === ""){
-		crearIntegrantes(Number($cantidadGrupoFamiliar));
+	if(validarCantidadGrupoFamiliar(cantidadGrupoFamiliar) === ""){
+		crearIntegrantes(cantidadGrupoFamiliar);
 		cambiarTituloParaCalcularEdades();
 		ocultarElementosExito();
 		mostrarBotonesOcultos();
 	}
 	else{
-		mostrarErroresCantidadGrupoFamiliar(Number($cantidadGrupoFamiliar));
+		mostrarErroresCantidadGrupoFamiliar(cantidadGrupoFamiliar);
 	}
 
 	return false;
-}
-
-function encontrarIntegranteDeMayorEdad(edadesFamilia){
-	let familiarMayor = edadesFamilia[0];
-
-	for (let i = 1; i < edadesFamilia.length; i++){
-		if(edadesFamilia[i] > familiarMayor){
-			familiarMayor = edadesFamilia[i];
-		}
-	}
-
-	return familiarMayor;
-}
-
-function encontrarIntegranteMasChico(edadesFamilia){
-	let familiarMenor = edadesFamilia[0];
-
-	for(let i = 1; i < edadesFamilia.length; i ++){
-		if(edadesFamilia[i] < familiarMenor){
-			familiarMenor = edadesFamilia[i];
-		};
-	};
-	return familiarMenor;
-}
-
-function calcularPromedioEdadFamiliaUsuario(edadesFamilia){
-	let acumuladorEdades = 0;
-	let promedioFinal;
-
-	for(let i = 0; i < edadesFamilia.length; i++){
-		acumuladorEdades += edadesFamilia[i];
-	}
-		
-	promedioFinal = acumuladorEdades / edadesFamilia.length;
-
-	return promedioFinal;
 }
 
 function validarEdadesDelGrupoFamiliar(edadesFamilia){
@@ -153,11 +117,11 @@ function validarResultado(edadesFamilia){
 }
 
 function guardarEdadesGrupoFamiliar(){
-	const $edadesDelGrupoFamiliar = document.querySelectorAll(".input-calcular-edades");
+	const edadesDelGrupoFamiliar = document.querySelectorAll(".input-calcular-edades");
 	let edadesFamilia = [];
 
-	for (let i = 0; i < $edadesDelGrupoFamiliar.length; i++){
-		edadesFamilia.push (Number($edadesDelGrupoFamiliar[i].value));
+	for (let i = 0; i < edadesDelGrupoFamiliar.length; i++){
+		edadesFamilia.push (Number(edadesDelGrupoFamiliar[i].value));
 	}
 
 	return edadesFamilia;
@@ -168,9 +132,9 @@ function mostrarRespuestaExito(edadesFamilia){
 	const $mostrarFamiliarMenor = document.querySelector (".respuesta-familiar-menor");
 	const $mostrarPromedioEdadFamilia = document.querySelector (".respuesta-promedio-edad-familia");
 
-	$mostrarFamiliarMayor.innerText = "El integrante de la familia con más edad tiene " + encontrarIntegranteDeMayorEdad(edadesFamilia) + " años";
-	$mostrarFamiliarMenor.innerText = "El integrante de la familia con menos edad tiene " + encontrarIntegranteMasChico(edadesFamilia) + " años";
-	$mostrarPromedioEdadFamilia.innerText = "El promedio de las edades del grupo familiar es de " + Math.trunc (calcularPromedioEdadFamiliaUsuario(edadesFamilia)) + " años";
+	$mostrarFamiliarMayor.innerText = "El integrante de la familia con más edad tiene " + encontrarMayor(edadesFamilia) + " años";
+	$mostrarFamiliarMenor.innerText = "El integrante de la familia con menos edad tiene " + encontrarMenor(edadesFamilia) + " años";
+	$mostrarPromedioEdadFamilia.innerText = "El promedio de las edades del grupo familiar es de " + Math.trunc (calcularPromedio(edadesFamilia)) + " años";
 
 	$mostrarFamiliarMayor.id = "";
 	$mostrarFamiliarMenor.id = "";
@@ -204,6 +168,9 @@ function mostrarRespuestaError(edadesFamilia){
 
 		if(errores){
 			$edadesGrupoFamiliar[i].id = "error-validacion";
+		}
+		else{
+			$edadesGrupoFamiliar[i].id = "";
 		}
 	}
 }
@@ -264,13 +231,13 @@ function borrarErrores(){
 }
 
 function borrarRespuestasExito(){
-	const respuestaFamiliarMayor = document.querySelector (".respuesta-familiar-mayor");
-	const respuestaFamiliarMenor = document.querySelector (".respuesta-familiar-menor");
-	const respuestaPromedioEdadFamilia = document.querySelector (".respuesta-promedio-edad-familia");
+	const $respuestaFamiliarMayor = document.querySelector (".respuesta-familiar-mayor");
+	const $respuestaFamiliarMenor = document.querySelector (".respuesta-familiar-menor");
+	const $respuestaPromedioEdadFamilia = document.querySelector (".respuesta-promedio-edad-familia");
 
-	respuestaFamiliarMayor.id = "oculto";
-	respuestaFamiliarMenor.id = "oculto";
-	respuestaPromedioEdadFamilia.id = "oculto";
+	$respuestaFamiliarMayor.id = "oculto";
+	$respuestaFamiliarMenor.id = "oculto";
+	$respuestaPromedioEdadFamilia.id = "oculto";
 }
 
 $botonReiniciarTramite.onclick = function(){
