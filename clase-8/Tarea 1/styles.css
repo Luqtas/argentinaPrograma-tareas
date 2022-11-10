@@ -9,54 +9,78 @@ body{
 	height: max-content;
 	width: max-content;
 	align-items: center;
-	border: 2px solid black;
 	border-radius: 10px;
 	background-color: beige;
+	box-shadow: 0 0 6px 2px grey;
 }
 .contenedor-titulo{
 	height: max-content;
 	width: max-content;
 	text-align: center;
 }
-.titulo{
+.titulo,
+.titulo-calcular-edades{
 	font-size: 25px;
 	font-family: sans-serif;
 }
 .contenedor-formulario{
 	display: flex;
-	justify-content: center;
-	align-self: center;
 	flex-direction: column;
+	justify-content: center;
+	height: max-content;
 	width: 100%;
 }
 .formulario{
 	display: flex;
 	flex-direction: column;
-	align-self: center;
+	justify-content: center;
+	align-items: center;
 }
-.formulario-input{
+.contenedor-input{
+	display: flex;
+	justify-content: center;
+}
+.estilos-input,
+.input-calcular-edades{
 	height: 30px;
 	width: 200px;
 	margin: 5px 0;
 }
-.formulario-enviar,
-.boton-calcular,
-.boton-resetear{
-	width: 210px;
+.errores,
+.errores-calcular-edades{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin: 10px 0px;
+}
+.contenedor-boton-enviar{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.contenedor-botones{
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+}
+.boton-enviar,
+.boton-reiniciar-tramite,
+.boton-calcular-edades{
+	width: 208px;
+	margin: auto;
 	margin: 5px 0;
 	padding: 5px;
 	border: 1px solid #6495ed;
 	border-radius: 5px;
-	align-self: center;
 }
-.formulario-enviar:hover,
-.boton-calcular:hover,
-.boton-resetear:hover{
+.boton-enviar:hover,
+.boton-reiniciar-tramite:hover,
+.boton-calcular-edades:hover{
 	color: #fff;
 	background-color: #6495ed;
 	border: 1px solid black;
 }
-.contenedor-respuesta{
+.respuesta{
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -72,15 +96,17 @@ body{
 #oculto{
 	display: none;
 }
+#error-validacion{
+	border: 2px solid red;
+}
 .label-de-respuesta{
 	margin: 5px 0;
 	font-family: sans-serif;
 	font-size: 15px;
 	text-align: center;
 }
-.edades-familia{
-	height: 30px;
-	width: 200px;
-	margin: 5px 0;
-	text-align: center;
+#texto-errores{
+	font-size: 15px;
+	font-family: sans-serif;
+	color: red;
 }

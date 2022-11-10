@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css"/>
+	<title>Tarea 1 Clase 6 (clase 8)</title>
+</head>
+<body>
+	<div class="contenedor">
+		<div class="contenedor-titulo">
+			<h1 class="titulo">¿Cuántas personas hay en tu grupo familiar?</h1>
+		</div>
+		<div class="contenedor-formulario">
+			<form class="formulario" name="formulario">
+				<div class="contenedor-input" name="contenedor">
+				    <input type="number" class="cantidad-familia estilos-input" id="" placeholder="Ingrese su respuesta">
+			    </div>
+			</form>
+				<div class="contenedor-boton-enviar">
+			        <div class="errores" id="oculto">
+			       	    <p class="error-cantidad-familia"></p>
+			        </div>
+			        
+				    <button class="boton-enviar">Enviar</button>
+			    </div>
+			<div class="errores-calcular-edades" id="oculto">
+			</div>
+			<div class="contenedor-botones">
+				<button class="boton-calcular-edades" id="oculto">Calcular</button>
+				<button class="boton-reiniciar-tramite" id="oculto">Reiniciar</button>
+			</div>
+		</div>
+	</div>
+	<div class="respuesta">
+		<p class="respuesta-familiar-mayor" id="oculto"></p>
+		<p class="respuesta-familiar-menor" id="oculto"></p>
+		<p class="respuesta-promedio-edad-familia" id="oculto"></p>
+	</div>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="calculos.js"></script>
+    <script type="text/javascript" src="pruebas.js"></script>
+</body>
+</html>

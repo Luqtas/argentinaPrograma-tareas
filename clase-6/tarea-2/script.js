@@ -1,64 +1,74 @@
-const botonAgregarInterfaz = document.querySelector (".contenedor-botones__agregar");
-const botonEliminarInterfaz = document.querySelector (".contenedor-botones__eliminar");
-const botonCalcularSalarios = document.querySelector (".formulario__calcular-ingresos");
-const botonReiniciar = document.querySelector (".formulario__reiniciar-formulario");
-const nodoFormulario = document.querySelector (".formulario");
-const respuestaSalarioMayorAnual = document.querySelector (".contenedor-respuesta__mayor-salario-anual");
-const respuestaSalarioMenorAnual = document.querySelector (".contenedor-respuesta__menor-salario-anual");
-const respuestaPromedioAnual = document.querySelector (".contenedor-respuesta__promedio-salario-anual");
-const respuestaPromedioMensual = document.querySelector (".contenedor-respuesta__promedio-salario-mensual");
+const $botonAgregarInterfaz = document.querySelector (".boton-agregar");
+const $botonEliminarInterfaz = document.querySelector (".boton-eliminar");
+const $botonCalcularSalarios = document.querySelector (".boton-calcular-ingresos");
+const $botonReiniciar = document.querySelector (".boton-reiniciar-tramite");
+const $nodoFormulario = document.querySelector (".formulario");
+const $respuestaSalarioMayorAnual = document.querySelector (".respuesta-mayor-salario-anual");
+const $respuestaSalarioMenorAnual = document.querySelector (".respuesta-menor-salario-anual");
+const $respuestaPromedioAnual = document.querySelector (".respuesta-promedio-salario-anual");
+const $respuestaPromedioMensual = document.querySelector (".respuesta-promedio-salario-mensual");
 
-botonAgregarInterfaz.onclick = function (){
+function crearNuevosElementos(){
 	const nuevoLabel = document.createElement ("label");
 	const textoLabel = document.createTextNode ("Ingresar salario anual del familiar");
-	nuevoLabel.style.margin = "5px 0px";
-	nuevoLabel.style.fontSize = "20px";
-	nuevoLabel.style.fontFamily = "sans-serif";
-	nuevoLabel.style.color = "black";
-	nuevoLabel.className = "label-agregado";
+	nuevoLabel.className = "formulario-label label-agregado";
 	nuevoLabel.appendChild (textoLabel);
-	nodoFormulario.appendChild (nuevoLabel);
+	$nodoFormulario.appendChild (nuevoLabel);
 
 	const nuevoInput = document.createElement ("input");
+	nuevoInput.type = "number"
 	nuevoInput.placeholder = "Salario anual"
-	nuevoInput.style.margin = "auto"; 
-	nuevoInput.style.marginTop = "10px";
-	nuevoInput.style.marginBottom = "10px";
-	nuevoInput.style.padding = "5px";
-	nuevoInput.style.width = "200px";
-	nuevoInput.style.height = "20px";
-	nuevoInput.style.border = "1px solid black";
-	nuevoInput.style.borderRadius = "5px";
-	nuevoInput.className = "input-agregado";
-	nodoFormulario.appendChild (nuevoInput);
+	nuevoInput.className = "formulario-input input-agregado";
+	$nodoFormulario.appendChild (nuevoInput);
+};
+
+$botonAgregarInterfaz.onclick = function (){
+	crearNuevosElementos();
 
 	return false;
 };
 
-botonEliminarInterfaz.onclick = function (){
-	const labelCreado = document.querySelector (".label-agregado");
-	const inputCreado = document.querySelector (".input-agregado");
+function eliminarElementosCreados(){
+	const $inputsExistentes = document.querySelectorAll ("input");
 
-	nodoFormulario.removeChild(labelCreado);
-	nodoFormulario.removeChild(inputCreado);
+	if($inputsExistentes.length > 1){
+		const $labelCreado = document.querySelector (".label-agregado");
+		const $inputCreado = document.querySelector (".input-agregado");
 
-	return false;
-};
-
-let listaDeSalarios = [];
-
-function guardarSalariosEnlista(){
-	const salariosAnuales = document.querySelectorAll ("input");
-
-	for (let i = 0; i < salariosAnuales.length; i++){
-		if (salariosAnuales[i].value !== ''){
-	        listaDeSalarios.push (Number(salariosAnuales[i].value));	
-	    };
+		$nodoFormulario.removeChild($labelCreado);
+		$nodoFormulario.removeChild($inputCreado);
+	}
+	else{
+		return false;
 	};
 };
 
-function encontrarMayorSalarioAnual(){
-    let mayorSalarioAnual = listaDeSalarios[0];
+$botonEliminarInterfaz.onclick = function (){
+	eliminarElementosCreados();
+
+	return false;
+};
+
+function guardarSalariosEnlista(todosLosSalarios){
+	let listaDeSalarios = [];
+
+	for (let i = 0; i < todosLosSalarios.length; i++){
+		if (todosLosSalarios[i].value === ''){
+
+		}
+		else if(todosLosSalarios[i].value <= 0){
+
+		}
+		else{
+			listaDeSalarios.push (todosLosSalarios[i].value);	
+		};
+	};
+
+	return listaDeSalarios;
+};
+
+function encontrarMayorSalarioAnual(listaDeSalarios){
+	let mayorSalarioAnual = listaDeSalarios[0];
 
 	for (let i = 1; i < listaDeSalarios.length; i++){
 		if (listaDeSalarios[i] > mayorSalarioAnual){
@@ -69,8 +79,8 @@ function encontrarMayorSalarioAnual(){
 	return mayorSalarioAnual;
 };
 
-function encontrarMenorSalarioAnual(){
-    let menorSalarioAnual = listaDeSalarios[0];
+function encontrarMenorSalarioAnual(listaDeSalarios){
+	let menorSalarioAnual = listaDeSalarios[0];
 
 	for (let i = 1; i < listaDeSalarios.length; i++){
 		if (listaDeSalarios[i] < menorSalarioAnual){
@@ -81,66 +91,74 @@ function encontrarMenorSalarioAnual(){
 	return menorSalarioAnual;
 };
 
-function promediarSalarioAnual(){
-    let promedioSalarioAnual = 0;
+function promediarSalarioAnual(listaDeSalarios){
+	let promedioSalarioAnual = 0;
 	for (let i = 0; i < listaDeSalarios.length; i++){
 		promedioSalarioAnual += listaDeSalarios[i];
 	};
 
-	return promedioSalarioAnual / listaDeSalarios.length;
+	return Math.trunc (promedioSalarioAnual / listaDeSalarios.length);
 };
 
-function promediarSalarioMensual(){
-	const mesesDelAnio = 12;
+function guardarSalarioMensual(listaDeSalarios, mesesDelAnio){
 	let listaSalarioMensual = [];
-	let promedioSalarioMensual = 0;
 
-	function guardarSalarioMensual(){
-		for (let i = 0; i < listaDeSalarios.length; i++){
-		    listaSalarioMensual.push (listaDeSalarios[i] / mesesDelAnio);
-	    };
+	for (let i = 0; i < listaDeSalarios.length; i++){
+		listaSalarioMensual.push (listaDeSalarios[i] / mesesDelAnio);
 	};
-	guardarSalarioMensual();
+
+	return listaSalarioMensual;
+};
+
+function promediarSalarioMensual(listaDeSalarios){
+	const mesesDelAnio = 12;
+	let promedioSalarioMensual = 0;
+	let listaSalarioMensual = guardarSalarioMensual(listaDeSalarios, mesesDelAnio);
 
 	for (let i = 0; i < listaSalarioMensual.length; i++){
 		promedioSalarioMensual += listaSalarioMensual[i];
 	};
 
-	return promedioSalarioMensual / listaSalarioMensual.length;
+	return Math.trunc (promedioSalarioMensual / listaSalarioMensual.length);
 };
 
-function darRespuestaUsuario(){
-	respuestaSalarioMayorAnual.innerText = "El mayor sueldo anual es de " + encontrarMayorSalarioAnual();
-    respuestaSalarioMenorAnual.innerText = "El menor sueldo anual es de " + encontrarMenorSalarioAnual();
-    respuestaPromedioAnual.innerText = "El promedio de salarios anuales es de " + promediarSalarioAnual();
-    respuestaPromedioMensual.innerText = "El promedio de salarios mensuales es de " + promediarSalarioMensual();
+function darRespuestaUsuario(listaDeSalarios){
+	if (listaDeSalarios.length !== 0){
+		$respuestaSalarioMayorAnual.innerText = "El mayor sueldo anual es de " + encontrarMayorSalarioAnual(listaDeSalarios);
+		$respuestaSalarioMenorAnual.innerText = "El menor sueldo anual es de " + encontrarMenorSalarioAnual(listaDeSalarios);
+		$respuestaPromedioAnual.innerText = "El promedio de salarios anuales es de " + promediarSalarioAnual(listaDeSalarios);
+		$respuestaPromedioMensual.innerText = "El promedio de salarios mensuales es de " + promediarSalarioMensual(listaDeSalarios);
+	}
 };
 
-botonCalcularSalarios.onclick = function(){
+$botonCalcularSalarios.onclick = function(){
+	const $salarios = document.querySelectorAll ("input");
+	let listaDeSalarios = guardarSalariosEnlista($salarios)
 
-	guardarSalariosEnlista();
-
-	darRespuestaUsuario();
+	darRespuestaUsuario(listaDeSalarios);
 
 	return false;
 };
 
 function eliminarRespuestas(){
-	respuestaSalarioMayorAnual.innerText = "";
-	respuestaSalarioMenorAnual.innerText = "";
-	respuestaPromedioAnual.innerText = "";
-	respuestaPromedioMensual.innerText = "";
+	$respuestaSalarioMayorAnual.innerText = "";
+	$respuestaSalarioMenorAnual.innerText = "";
+	$respuestaPromedioAnual.innerText = "";
+	$respuestaPromedioMensual.innerText = "";
 };
 
-botonReiniciar.onclick = function(){
-	const labelsCreados = document.querySelectorAll (".label-agregado");
-	const inputsCreados = document.querySelectorAll (".input-agregado");
+function eliminarTodosLosNodosCreados(){
+	const $labelsCreados = document.querySelectorAll (".label-agregado");
+	const $inputsCreados = document.querySelectorAll (".input-agregado");
 
-	for (let i = 0; i < labelsCreados.length; i++){
-		labelsCreados[i].remove();
-		inputsCreados[i].remove();
+	for (let i = 0; i < $labelsCreados.length; i++){
+		$labelsCreados[i].remove();
+		$inputsCreados[i].remove();
 	};
+};
 
+$botonReiniciar.onclick = function(){
+	eliminarTodosLosNodosCreados()
 	eliminarRespuestas();
 
 	return false;

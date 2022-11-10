@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css"/>
+	<title>Tarea 2 Clase 6 (clase 8)</title>
+</head>
+<body>
+	<div class="contenedor-titulo">
+		<h1 class="contenedor-titulo__titulo">Calculador de ingresos</h1>
+	</div>
+	<div class="contenedor-sumar-restar">
+		<div class="contenedor-icono-agregar">
+			<button class="boton-agregar">Agregar salario</button>
+		</div>
+		<div class="contenedor-icono-eliminar">
+			<button class="boton-eliminar">Eliminar salario</button>
+		</div>
+	</div>
+	<div class="contenedor-de-formulario">
+		<form class="formulario">
+			<label class="formulario-label">Ingresar su salario anual</label>
+			<input class="formulario-sueldos" placeholder="Salario anual" type="number">
+		</form>
+		<div class="contenedor-errores" id="oculto">
+		</div>
+		<div class="contenedor-de-botones">
+			<button class="boton-calcular-ingresos">Calcular</button>
+			<button class="boton-reiniciar-formulario">Reiniciar</button>
+		</div>
+	</div>
+	<div class="contenedor-respuestas">
+		<p class="respuesta-mayor-salario-anual respuesta-exito"></p>
+		<p class="respuesta-menor-salario-anual respuesta-exito"></p>
+		<p class="respuesta-promedio-salario-anual respuesta-exito"></p>
+		<p class="respuesta-promedio-salario-mensual respuesta-exito"></p>
+	</div>
+
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="calculos.js"></script>
+	<script type="text/javascript" src="pruebas.js"></script>
+</body>
+</html>
