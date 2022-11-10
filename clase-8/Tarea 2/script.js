@@ -88,12 +88,13 @@ function validarResultado(listaSalarios){
 	return esExito;
 }
 
-function guardarSalariosEnLista(salariosGrupoFamiliar){
+function guardarSalariosEnLista(){
+	const salariosGrupoFamiliar = document.querySelectorAll (".formulario-sueldos");
 	let listaSalarios = [];
 
-	for(let i = 0; i < salariosGrupoFamiliar.length; i++){
-		listaSalarios.push (Number(salariosGrupoFamiliar[i].value));
-	}
+	salariosGrupoFamiliar.forEach (function(salarios){
+		listaSalarios.push (Number(salarios.value));
+	});
 
 	return listaSalarios;
 }
@@ -101,31 +102,31 @@ function guardarSalariosEnLista(salariosGrupoFamiliar){
 function guardarSalarioMensual(mesesDelAnio, listaSalarios){
 	let listaSalarioMensual = [];
 
-	for (let i = 0; i < listaSalarios.length; i++){
-		listaSalarioMensual.push (listaSalarios[i] / mesesDelAnio);
-	}
+	listaSalarios.forEach(function(salarios){
+		listaSalarioMensual.push (salarios / mesesDelAnio)
+	});
 
 	return listaSalarioMensual;
 }
 
 function darRespuestaExito(listaSalarios){
-	const respuestaMayorSueldoAnual = document.querySelector (".respuesta-mayor-salario-anual");
-	const respuestaMenorSueldoAnual = document.querySelector (".respuesta-menor-salario-anual");
-	const respuestaPromedioSueldoAnual = document.querySelector (".respuesta-promedio-salario-anual");
-	const respuestaPromedioSueldoMensual = document.querySelector (".respuesta-promedio-salario-mensual");
+	const $respuestaMayorSueldoAnual = document.querySelector (".respuesta-mayor-salario-anual");
+	const $respuestaMenorSueldoAnual = document.querySelector (".respuesta-menor-salario-anual");
+	const $respuestaPromedioSueldoAnual = document.querySelector (".respuesta-promedio-salario-anual");
+	const $respuestaPromedioSueldoMensual = document.querySelector (".respuesta-promedio-salario-mensual");
 
-	respuestaMayorSueldoAnual.innerText = "El mayor sueldo anual es de " + encontrarMayorSalarioAnual(listaSalarios);
-	respuestaMenorSueldoAnual.innerText = "El menor sueldo anual es de " + encontrarMenorSalarioAnual(listaSalarios);
-	respuestaPromedioSueldoAnual.innerText = "El promedio de salarios anuales es de " + Math.trunc (promediarSalarioAnual(listaSalarios));
-	respuestaPromedioSueldoMensual.innerText = "El promedio de salarios mensuales es de " + Math.trunc (promediarSalarioMensual(listaSalarios));
+	$respuestaMayorSueldoAnual.innerText = "El mayor sueldo anual es de " + encontrarMayor(listaSalarios);
+	$respuestaMenorSueldoAnual.innerText = "El menor sueldo anual es de " + encontrarMenor(listaSalarios);
+	$respuestaPromedioSueldoAnual.innerText = "El promedio de salarios anuales es de " + Math.trunc (calcularPromedio(listaSalarios));
+	$respuestaPromedioSueldoMensual.innerText = "El promedio de salarios mensuales es de " + Math.trunc (calcularPromedioMensual(listaSalarios));
 
-	respuestaMayorSueldoAnual.id = "";
-	respuestaMenorSueldoAnual.id = "";
-	respuestaPromedioSueldoAnual.id = "";
-	respuestaPromedioSueldoMensual.id = "";
+	$respuestaMayorSueldoAnual.id = "";
+	$respuestaMenorSueldoAnual.id = "";
+	$respuestaPromedioSueldoAnual.id = "";
+	$respuestaPromedioSueldoMensual.id = "";
 
-	const mostrarErrores = document.querySelector (".contenedor-errores");
-	mostrarErrores.id = "oculto";
+	const $mostrarErrores = document.querySelector (".contenedor-errores");
+	$mostrarErrores.id = "oculto";
 
 	const salariosGrupoFamiliar = document.querySelectorAll (".formulario-sueldos");
 	let exitos;
@@ -140,9 +141,9 @@ function darRespuestaExito(listaSalarios){
 }
 
 function darRespuestaError(resultadoFinal){
-	const mostrarErrores = document.querySelector (".contenedor-errores");
-	mostrarErrores.innerText = resultadoFinal;
-	mostrarErrores.id = "texto-errores";
+	const $mostrarErrores = document.querySelector (".contenedor-errores");
+	$mostrarErrores.innerText = resultadoFinal;
+	$mostrarErrores.id = "texto-errores";
 
 	const salariosGrupoFamiliar = document.querySelectorAll (".formulario-sueldos");
 	let errores;
@@ -158,8 +159,7 @@ function darRespuestaError(resultadoFinal){
 }
 
 $calcularSalariosFamilia.onclick = function (){
-	const salariosGrupoFamiliar = document.querySelectorAll (".formulario-sueldos");
-	let listaSalarios = guardarSalariosEnLista(salariosGrupoFamiliar);
+	let listaSalarios = guardarSalariosEnLista();
 
 	let resultadoFinal = validarResultado(listaSalarios);
 
@@ -174,12 +174,12 @@ $calcularSalariosFamilia.onclick = function (){
 };
 
 function eliminarSalariosFamiliaresCreados(){
-	const $labelsCreados = document.querySelectorAll (".label-agregado");
-	const $inputsCreados = document.querySelectorAll (".input-agregado");
+	const labelsCreados = document.querySelectorAll (".label-agregado");
+	const inputsCreados = document.querySelectorAll (".input-agregado");
 
-	for (let i = 0; i < $labelsCreados.length; i++){
-		$labelsCreados[i].remove();
-		$inputsCreados[i].remove();
+	for (let i = 0; i < labelsCreados.length; i++){
+		labelsCreados[i].remove();
+		inputsCreados[i].remove();
 	};
 
 	cantidadDeNodosCreados = 0;
@@ -192,20 +192,20 @@ function quitarRemarcadoDeErrorSueldos(sueldosFamilia){
 }
 
 function ocultarRespuestas(){
-	const respuestaMayorSueldoAnual = document.querySelector (".respuesta-mayor-salario-anual");
-	const respuestaMenorSueldoAnual = document.querySelector (".respuesta-menor-salario-anual");
-	const respuestaPromedioSueldoAnual = document.querySelector (".respuesta-promedio-salario-anual");
-	const respuestaPromedioSueldoMensual = document.querySelector (".respuesta-promedio-salario-mensual");
+	const $respuestaMayorSueldoAnual = document.querySelector (".respuesta-mayor-salario-anual");
+	const $respuestaMenorSueldoAnual = document.querySelector (".respuesta-menor-salario-anual");
+	const $respuestaPromedioSueldoAnual = document.querySelector (".respuesta-promedio-salario-anual");
+	const $respuestaPromedioSueldoMensual = document.querySelector (".respuesta-promedio-salario-mensual");
 
-	respuestaMayorSueldoAnual.innerText = "";
-	respuestaMenorSueldoAnual.innerText = "";
-	respuestaPromedioSueldoAnual.innerText = "";
-	respuestaPromedioSueldoMensual.innerText = "";
+	$respuestaMayorSueldoAnual.innerText = "";
+	$respuestaMenorSueldoAnual.innerText = "";
+	$respuestaPromedioSueldoAnual.innerText = "";
+	$respuestaPromedioSueldoMensual.innerText = "";
 }
 
 function ocultarErrores(){
-	const errores = document.querySelector (".contenedor-errores");
-	errores.innerText = "";
+	const $errores = document.querySelector (".contenedor-errores");
+	$errores.innerText = "";
 }
 
 $reiniciarTramite.onclick = function (){

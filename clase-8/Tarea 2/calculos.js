@@ -1,4 +1,4 @@
-function encontrarMayorSalarioAnual(listaSalarios){
+function encontrarMayor(listaSalarios){
 	let mayorSalarioAnual = listaSalarios[0];
 
 	for (let i = 1; i < listaSalarios.length; i++){
@@ -10,7 +10,7 @@ function encontrarMayorSalarioAnual(listaSalarios){
 	return mayorSalarioAnual;
 }
 
-function encontrarMenorSalarioAnual(listaSalarios){
+function encontrarMenor(listaSalarios){
 	let menorSalarioAnual = listaSalarios[0];
 
 	for (let i = 1; i < listaSalarios.length; i++){
@@ -22,7 +22,7 @@ function encontrarMenorSalarioAnual(listaSalarios){
 	return menorSalarioAnual;
 }
 
-function promediarSalarioAnual(listaSalarios){
+function calcularPromedio(listaSalarios){
 	let acumuladorPromedioSalarioAnual = 0;
 
 	for (let i = 0; i < listaSalarios.length; i++){
@@ -32,7 +32,7 @@ function promediarSalarioAnual(listaSalarios){
 	return acumuladorPromedioSalarioAnual / listaSalarios.length;
 }
 
-function promediarSalarioMensual(listaSalarios){
+function calcularPromedioMensual(listaSalarios){
 	const mesesDelAnio = 12;
 	let listaSalarioMensual = guardarSalarioMensual(mesesDelAnio, listaSalarios);
 	let acumuladorPromedioSalarioMensual = 0;
