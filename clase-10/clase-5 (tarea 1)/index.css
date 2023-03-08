@@ -1,0 +1,15 @@
+.contenedor-formulario {
+  margin-top: 30vh;
+}
+input{
+    margin: 10px 0;
+}
+.sueldo-anual,
+.sueldo-mensual,
+.sueldo-mensual-a-diario {
+  transition-property: border;
+  transition-duration: 0.3s;
+}
+#error-validacion {
+  border: 1px solid red;
+}
