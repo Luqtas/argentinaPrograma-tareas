@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='../../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+    <title>Tarea 1 Clase 5 (10)</title>
+</head>
+<body>
+    <div class="contenedor-formulario">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <form>
+              <fieldset>
+                <div class="mb-3">
+                  <input type="number" id="disabledTextInput" class="form-control sueldo-anual" placeholder="Sueldo anual">
+                  <button type="submit" class="btn btn-primary calcular-sueldo-mensual">Calcular</button>
+                  <input type="text" id="disabledTextInput" class="form-control sueldo-mensual-resultado" placeholder="Sueldo mensual" disabled>
+                </div>
+              </fieldset>
+          </form>
+          </div>
+
+          <div class="col">
+            <form>
+              <fieldset>
+                <div class="mb-3">
+                  <input type="number" id="disabledTextInput" class="form-control sueldo-mensual" placeholder="Sueldo mensual">
+                  <button type="submit" class="btn btn-primary calcular-sueldo-anual">Calcular</button>
+                  <input type="text" id="disabledTextInput" class="form-control sueldo-anual-resultado" placeholder="Sueldo anual" disabled>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <div class="col">
+            <form>
+              <fieldset>
+                <div class="mb-3">
+                  <input type="number" id="disabledTextInput" class="form-control sueldo-mensual-a-diario" placeholder="Sueldo mensual">
+                  <button type="submit" class="btn btn-primary calcular-sueldo-diario">Calcular</button>
+                  <input type="text" id="disabledTextInput" class="form-control sueldo-diario-resultado" placeholder="Sueldo diario" disabled>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    <script src='index.js'></script>
+    <script src='pruebas.js'></script>
+</body>
+</html>
