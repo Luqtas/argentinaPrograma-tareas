@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' media='screen' href='../../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+  <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+  <title>Tarea 3 clase 5 (10)</title>
+</head>
+<body>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="container contenedor-titulo-clase">
+          <h3 class="titulo-clase">Clase 1</h3>
+        </div>
+        <div class="mb-3">
+          <input type="number" class="form-control horas-de-clase" id="formGroupExampleInput" placeholder="Ingrese las horas de la clase 1" value="">
+          <div class="invalid-feedback texto-error-horas"></div>
+        </div>
+        <div class="mb-3">
+          <input type="number" class="form-control minutos-de-clase" id="formGroupExampleInput2" placeholder="Ingrese los minutos de la clase 1" value="">
+          <div class="invalid-feedback texto-error-minutos"></div>
+        </div>
+        <div class="mb-3">
+          <input type="number" class="form-control segundos-de-clase" id="formGroupExampleInput2" placeholder="Ingrese los segundos de la clase 1" value="">
+          <div class="invalid-feedback texto-error-segundos"></div>
+        </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary boton-calcular-total" type="button">Calcular tiempo total</button>
+        </div>
+        <div id="oculto" class="alert alert-info contenedor-mensaje-final" role="alert"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="index.js"></script>
+  <script src="pruebas.js"></script>
+</body>
+</html>
