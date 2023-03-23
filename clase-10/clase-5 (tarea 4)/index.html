@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' media='screen' href='../../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+  <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+  <title>Tarea 4 clase 5 (10)</title>
+</head>
+<body>
+  <div class="contenedor-titulo">
+    <h1 class="titulo">¿Qué deseas calcular?</h>
+  </div>
+
+  <div class="contenedor-botones">
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn btn-primary botones-elegir-calculo boton-promedio" type="button">Calcular promedio</button>
+      <button class="btn btn-primary botones-elegir-calculo boton-mas-pequeño" type="button">Calcular mas pequeño</button>
+      <button class="btn btn-primary botones-elegir-calculo boton-mas-grande" type="button">Calcular mas grande</button>
+      <button class="btn btn-primary botones-elegir-calculo boton-frecuente" type="button">Calcular mas frecuente</button>
+    </div>
+  </div>
+
+  <div class="contenedor-botones-agregar-eliminar" id="oculto">
+    <div class="d-grid gap-2 col-6 mx-auto contenedor">
+      <button class="btn btn-primary boton-agregar-input" type="button">Agregar</button>
+      <button class="btn btn-secondary boton-eliminar-input" type="button" disabled>Eliminar</button>
+    </div>
+  </div>
+
+  <div class="contenedor-formulario" id="oculto">
+    <div class="input-group mb-3 contenedor">
+      <input type="number" class="form-control numeros-usuario" placeholder="Ingrese el valor que desee calcular">
+    </div>
+
+    <div class="input-group mb-3 contenedor">
+      <input type="number" class="form-control numeros-usuario" placeholder="Ingrese el valor que desee calcular">
+    </div>
+  </div>
+
+  <div class="contenedor-boton-calcular" id="oculto">
+    <div class="d-grid gap-2 col-6 mx-auto contenedor ">
+      <button class="btn btn-primary boton-calcular" type="button">Calcular</button>
+      <button class="btn btn-secondary boton-reiniciar" type="button">Reiniciar</button>
+    </div>
+  </div>
+
+  <div class="container contenedor-respuesta contenedor" id="oculto">
+    <div class="alert alert-success" role="alert"></div>
+  </div>
+
+  <script src="index.js"></script>
+  <script src="pruebas.js"></script>
+</body>
+</html>
