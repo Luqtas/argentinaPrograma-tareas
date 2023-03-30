@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' type='text/css' media='screen' href='../../node_modules/bootstrap/dist/css/bootstrap.min.css'>
+  <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+  <title>Tarea 1 clase 6 (10)</title>
+</head>
+
+<body>
+  <div class="container contenedor-cantidad-invitados">
+    <form>
+      <div class="mb-3">
+        <h2 class="display-3 titulo-formulario">¿Cantidad de invitados?</h2>
+        <input type="number" class="form-control cantidad-invitados" placeholder="Ingrese su respuesta">
+        <div class="invalid-feedback error-cantidad-invitados"></div>
+        <button class="btn btn-primary boton-enviar" type="button" value="">Enviar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="container contenedor-formulario-datos" id="oculto">
+    <form>
+      <h2 class="display-3 titulo-formulario">Ingrese los datos del invitado</h2>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre</label>
+        <input type="text" class="form-control nombre-invitado dato-invitado" placeholder="Nombre del invitado">
+        <div class="invalid-feedback error-nombre-invitado"></div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Apellido</label>
+        <input type="text" class="form-control apellido-invitado dato-invitado" placeholder="Apellido del invitado">
+        <div class="invalid-feedback error-apellido-invitado"></div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Edad</label>
+        <input type="number" class="form-control edad-invitado dato-invitado" placeholder="Edad del invitado">
+        <div class="invalid-feedback error-edad-invitado"></div>
+        <button class="btn btn-primary boton-enviar-datos" type="button">Enviar</button>
+        <button class="btn btn-secondary boton-reiniciar" type="button">Reiniciar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="container contenedor-respuesta text-center" id="oculto">
+    <h1 class="display-5">Respuesta</h1>
+    <div class="alert alert-primary respuesta-final" role="alert"></div>
+  </div>
+  
+  <script src='index.js'></script>
+  <script src='pruebas.js'></script>
+</body>
+</html>
