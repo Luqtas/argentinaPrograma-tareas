@@ -1,0 +1,31 @@
+.contenedor-titulo {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+  max-width: 720px;
+}
+.contenedor-sumar-restar {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-width: 720px;
+}
+.contenedor-input {
+  max-width: 540px;
+}
+.contenedor-sueldo {
+  margin-top: 20px;
+}
+.contenedor-botones {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-width: 540px;
+}
+.contenedor-respuesta {
+  max-width: 540px;
+}
+
+#oculto {
+  display: none;
+}
