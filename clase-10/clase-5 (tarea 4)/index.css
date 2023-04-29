@@ -1,0 +1,27 @@
+.contenedor-titulo{
+  margin: 30px 0;
+}
+.titulo{
+  text-align: center;
+  min-height: 66.3px;
+}
+.contenedor-botones{
+  display: flex;
+  margin: auto;
+}
+.contenedor-formulario{
+  margin: 40px 20px;
+}
+.contenedor-boton-calcular{
+  margin: 30px 0;
+}
+.contenedor{
+  max-width: 400px;
+  margin: auto;
+}
+.alert-success{
+  text-align: center;
+}
+#oculto{
+  display: none;
+}

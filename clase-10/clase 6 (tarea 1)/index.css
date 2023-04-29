@@ -1,0 +1,30 @@
+.mb-3{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 550px;
+}
+.cantidad-invitados,
+.nombre-invitado
+.apellido-invitado,
+.edad-invitado{
+  margin: 5px 0;
+}
+.boton-enviar{
+  margin: 5px 0;
+}
+.boton-enviar-datos{
+  margin: 15px 0;
+}
+.titulo-formulario{
+  padding: 25px 0;
+  text-align: center;
+}
+.fila-tags,
+.fila-datos{
+  margin: 15px 0;
+}
+
+#oculto{
+  display: none;
+}
