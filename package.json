@@ -4,11 +4,17 @@
   "description": "Son las tareas que fui haciendo a lo largo de las clases.",
   "main": "index.js",
   "scripts": {
+    "start": "http-server",
+    "cypress:open": "cypress open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Lucas Damian Gonzalez",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.2.3"
+  },
+  "devDependencies": {
+    "cypress": "^12.10.0",
+    "http-server": "^14.1.1"
   }
 }
