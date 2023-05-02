@@ -1,6 +1,6 @@
 function probarValidarSueldos() {
   console.assert(
-    validarSueldos(0) === "El suelo anual no puede ser menor a 1000",
+    validarSueldos(0) === "El sueldo anual no puede ser menor a 1000",
     "validarSueldos con un valor menor a 1000 no ha funcionado correctamente"
   );
 
