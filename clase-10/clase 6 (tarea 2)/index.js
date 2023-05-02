@@ -5,7 +5,7 @@ const $botonReiniciar = document.querySelector(".boton-reiniciar");
 
 function validarSueldos(sueldoAnual) {
   if (sueldoAnual < 1000) {
-    return "El suelo anual no puede ser menor a 1000";
+    return "El sueldo anual no puede ser menor a 1000";
   } else if (sueldoAnual > 999999999) {
     return "El sueldo anual no puede ser mayor a 999999999";
   } else {
